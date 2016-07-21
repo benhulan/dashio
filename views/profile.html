@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="dashioApp">
 <head>
   <title>Dashio</title>
   <!-- Requires Angular -->
@@ -15,17 +15,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
-<body ng-app="dashioApp">
+<body ng-controller="dashioCtrl">
 <nav>
     <div class="nav-wrapper">
-      <a href="/" class="brand-logo">Dashio</a>
+      <a href="/logout" class="brand-logo">Dashio</a>
       <ul class="right hide-on-med-and-down">
         <li><a class="waves-effect waves-light btn">Logout</a></li>
       </ul>
     </div>
   </nav>
 
-<div class="container" ng-controller="dashioCtrl">
+<div class="container">
 <h2 class="header">Hello, {{ firstName }} !</h2>
 
 <hr>

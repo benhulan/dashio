@@ -1,6 +1,4 @@
 var dashioApp = angular.module("dashioApp", []);
-
-
  
 dashioApp.config(function($httpProvider) {
   //Enable cross domain calls
@@ -9,10 +7,12 @@ dashioApp.config(function($httpProvider) {
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
 });
 
-dashioApp.controller("dashioCtrl", function($scope){
+dashioApp.controller("dashioCtrl", function($scope, $rootScope){
   console.log("controller connected");
+  $rootScope.session = {};
+  $rootScope.session.user = "Happy";
   // if(!localStorage.firstName){
-  localStorage.setItem('firstName', user.firstName);
+  localStorage.setItem('firstName', $rootScope.session.user);
   // }
   $scope.firstName = localStorage.getItem('firstName');
   console.log($scope.firstName);
